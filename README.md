@@ -68,6 +68,7 @@ The state object implements [Svelte’s store contract](https://svelte.dev/docs#
 e.g., A small excerpt from [its use in](https://github.com/small-tech/basil/blob/stripe/.kit/src/lib/admin/PSL.svelte) [Basil](https://github.com/small-tech/basil), the [Small Web](https://ar.al/2020/08/07/what-is-the-small-web/) Host:
 
 ### Markup
+
 ```html
 <h3 id='psl'>Public Suffix List (PSL) Settings</h3>
 
@@ -91,6 +92,7 @@ e.g., A small excerpt from [its use in](https://github.com/small-tech/basil/blob
 ```
 
 ### Script
+
 ```js
   import State from '@small-tech/state'
 
