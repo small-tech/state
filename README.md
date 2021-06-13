@@ -135,6 +135,18 @@ e.g., A small excerpt from [its use in](https://github.com/small-tech/basil/blob
   })
 ```
 
+## Tests
+
+```shell
+npm run test
+```
+
+## Coverage
+
+```shell
+npm run coverage
+```
+
 ## Like this? Fund us!
 
 [Small Technology Foundation](https://small-tech.org) is a tiny, independent not-for-profit.
