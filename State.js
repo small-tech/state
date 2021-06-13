@@ -101,7 +101,7 @@ class State {
   }
 
   subscribe (handler) {
-    const id = Date.now()
+    const id = Math.ceil(Math.random() * 100000000000000000)
     this.subscribers.push({ id, handler })
 
     // Call the handler right away (as per the Svelte spec).
