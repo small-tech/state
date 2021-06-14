@@ -29,29 +29,30 @@ The first state is set as the default state.
 ### Check state
 
 ```js
-console.log(state.is(state.UNKNOWN)) // true
+state.is(state.UNKNOWN) // true
 ```
 
 ### Change state (without updating the context)
 
 ```js
 state.set(state.OK)
-console.log(state.is(state.OK)) // true
+state.is(state.OK) // true
 ```
 
 ### Get the current state
 
 ```js
-console.log(state.now) // {}
-console.log(state.now === state.OK) // true
+state.now // {}
+state.now === state.OK // true
+state.is(state.OK)     // (same as above)
 ```
 
 ### Change state (and update the context)
 
 ```js
 state.set(state.NOT_OK, { error: 'This is just not ok.' })
-console.log(state.NOT_OK.error) // This is just not ok.
-console.log(state.now.error)    // This is just not ok.
+state.NOT_OK.error // 'This is just not ok.'
+state.now.error    // (same as above)
 ```
 
 ## Guards
@@ -59,13 +60,13 @@ console.log(state.now.error)    // This is just not ok.
 The state object is actually a proxy and it will guard you against making the following mistakes (by throwing an error):
 
   - Attempt to access a non-existent state (throws `TypeError`).
-  - Attempt to directly create a state or update a context after initialisation (throws `Error`).
+  - Attempt to directly create a state or directly set the context of a state after initialisation (throws `Error`). Use the `set()` method, instead, for both these actions.
 
 ## Use with Svelte
 
 The state object implements [Svelte’s store contract](https://svelte.dev/docs#Store_contract). So you can use it reactively within your Svelte interface.
 
-e.g., A small excerpt from [its use in](https://github.com/small-tech/basil/blob/stripe/.kit/src/lib/admin/PSL.svelte) [Basil](https://github.com/small-tech/basil), the [Small Web](https://ar.al/2020/08/07/what-is-the-small-web/) Host:
+e.g., A small excerpt from [its use in](https://github.com/small-tech/basil/blob/stripe/.kit/src/lib/admin/PSL.svelte) [Basil](https://github.com/small-tech/basil), the [Small Web](https://ar.al/2020/08/07/what-is-the-small-web/) Host (work-in-progress):
 
 ### Markup
 
