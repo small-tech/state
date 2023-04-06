@@ -1,6 +1,6 @@
 {
   "name": "@small-tech/state",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A tiny JavaScript state management class that supports Svelte stores.",
   "main": "State.js",
   "type": "module",
